@@ -1,0 +1,65 @@
+@import 'fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--chat-background: 230 25% 95%;
+		--chat-surface: 0 0% 100%;
+		--chat-foreground: 230 14% 9%;
+		--chat-muted: 228 7% 45%;
+		--chat-accent: 210 87% 55%;
+		--chat-accent-foreground: 0 0% 100%;
+		--chat-danger: 0 72% 51%;
+		--chat-capsule: 228 12% 32%;
+		--chat-capsule-foreground: 0 0% 100%;
+		--chat-pattern: 257 36% 88%;
+		--chat-bubble-in-foreground: 230 14% 9%;
+		--chat-bubble-out-foreground: 0 0% 100%;
+		--chat-bubble-in: linear-gradient(239deg, #ffffff 0%, #fcfcfe 50%, #f7f7fb 100%);
+		--chat-bubble-out: linear-gradient(239deg, #8849b4 0%, #735acd 50%, #5d6ae5 100%);
+		--chat-wallpaper: radial-gradient(58% 54% at 94% 14%, #ede6fa 0%, transparent 62%),
+			radial-gradient(64% 48% at 6% 88%, #e4ebf9 0%, transparent 60%), linear-gradient(#f0f1f6, #f0f1f6);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--chat-background: 0 0% 8%;
+			--chat-surface: 255 8% 9%;
+			--chat-foreground: 0 0% 100%;
+			--chat-muted: 0 0% 66%;
+			--chat-danger: 0 100% 69%;
+			--chat-capsule: 231 25% 21%;
+			--chat-pattern: 300 14% 17%;
+			--chat-bubble-in-foreground: 0 0% 100%;
+			--chat-bubble-in: linear-gradient(239deg, #3b3f5e 0%, #373a4e 50%, #32343d 100%);
+			--chat-wallpaper: radial-gradient(58% 54% at 94% 14%, #1a1420 0%, transparent 62%),
+				radial-gradient(64% 48% at 6% 88%, #16161c 0%, transparent 60%), linear-gradient(#141414, #141414);
+		}
+	}
+
+	body {
+		@apply bg-chat-background font-sans text-chat-foreground antialiased;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border: 2px solid transparent;
+	border-radius: 10px;
+	background: hsl(var(--chat-muted) / 0.4) padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: hsl(var(--chat-muted) / 0.7) padding-box;
+}

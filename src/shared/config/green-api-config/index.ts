@@ -1,0 +1,4 @@
+export const GREEN_API_CONFIG = {
+	REQUEST_TIMEOUT_MS: 30000,
+	MESSAGE_MAX_LENGTH: 4000
+} as const

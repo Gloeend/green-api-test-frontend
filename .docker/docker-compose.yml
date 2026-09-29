@@ -1,0 +1,11 @@
+name: green-api-chat
+
+services:
+  frontend-prod:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+    container_name: green-api-chat-prod
+    ports:
+      - '127.0.0.1:5174:80'
+    restart: unless-stopped
